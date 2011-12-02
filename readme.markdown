@@ -50,13 +50,13 @@ Basics
 #### import
 ```clojure
 (ns my-mongo-app
-  (:use somnium.congomongo))
+  (:require [somnium.congomongo :as mongo]))
 ```
 #### make a connection
 ```clojure
-(def conn mongo/make-connection "mydb"
+(def conn (mongo/make-connection "mydb"
                                 :host "127.0.0.1"
-                                :port 27017) => #'user/conn
+                                :port 27017)) => #'user/conn
 
 conn => {:mongo #<Mongo Mongo: 127.0.0.1:20717>, :db #<DBApiLayer mydb>}
 ```
